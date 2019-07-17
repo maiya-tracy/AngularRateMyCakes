@@ -1,0 +1,20 @@
+div {
+  border-radius: 10px;
+  border-width: 10px;
+  border-style: solid;
+}
+.div1 {
+  border-color: pink;
+}
+.div2 {
+  border-color: lightblue;
+}
+.outerdiv {
+  border-color: lavender;
+}
+.divhidden {
+  border-style: none;
+}
+img {
+  max-width: 150px;
+}

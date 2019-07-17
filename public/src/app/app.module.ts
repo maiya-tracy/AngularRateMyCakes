@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { RateMyCakesComponent } from './rate-my-cakes/rate-my-cakes.component';
 import { ViewCakeComponent } from './view-cake/view-cake.component';
 
+import { HttpService } from './http.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +16,11 @@ import { ViewCakeComponent } from './view-cake/view-cake.component';
     ViewCakeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      HttpClientModule,
+			FormsModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

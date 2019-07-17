@@ -1,1 +1,40 @@
-<p>rate-my-cakes works!</p>
+
+<div class="div1 row">
+  <div class="div2 col">
+    <form (submit)="addCake()">
+      <p>Submit a cake to be rated</p>
+      <input type="text" placeholder="Baker Name" name="newCake.name" [(ngModel)]="newCake.name">
+      <input type="text" placeholder="Image URL" name="newCake.url" [(ngModel)]="newCake.url">
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <div class="col divhidden">
+    <h3 class="row divhidden">All the cakes!</h3>
+    <div class="row divhidden">
+      <div class="row divhidden" *ngFor="let cake of cakes">
+        <div class="col divhidden">
+          <p>Baker: {{ cake.name }}</p>
+          <img src="{{cake.URL}}" alt="{{cake.name}}" style="width: 75%;">
+        </div>
+        <div class="col divhidden">
+          <form (submit)="addComment()">
+            <select class="form-control" name="newComment.rating" [(ngModel)]="newComment.rating">
+              <option value="5">5 stars</option>
+              <option value="4">4 stars</option>
+              <option value="3">3 stars</option>
+              <option value="2">2 stars</option>
+              <option value="1">1 star</option>
+            </select>
+            <textarea class="form-control" name="newComment.comment" [(ngModel)]="newComment.comment" rows="3" placeholder="Type your comment here"></textarea>
+            <input type="hidden" name="newComment.cake_id" [(ngModel)]="newComment.cake_id" value="{{cake._id}}">
+            <button type="submit" class="btn btn-outline-info btn-sm">Comment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <app-view-cake></app-view-cake>
+</div>
