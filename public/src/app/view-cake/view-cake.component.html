@@ -1,2 +1,11 @@
-<div class="h1 divhidden">Baked by {{ cakes.name }}</div>
-<div class="col divhidden"><img src="{{cakes.URL}}" alt="{{cakes.name}}" style="height: 75%; width: 100%;">
+testing outside if
+<div *ngIf="isCakeShowing">
+  testing in if
+
+  <div class="h1 divhidden">Baked by {{ current_cake.name }}</div>
+  <div class="col divhidden"><img src="{{current_cake.link}}" alt="{{current_cake.name}}" style="height: 75%; width: 100%;"></div>
+  <div *ngFor="let rating of current_cake.rating">
+    <p>Rating: {{rating.rating}}</p>
+    <p>Comment: {{rating.comment}}</p>
+  </div>
+</div>

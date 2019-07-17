@@ -4,7 +4,7 @@
     <form (submit)="addCake()">
       <p>Submit a cake to be rated</p>
       <input type="text" placeholder="Baker Name" name="newCake.name" [(ngModel)]="newCake.name">
-      <input type="text" placeholder="Image URL" name="newCake.url" [(ngModel)]="newCake.url">
+      <input type="text" placeholder="Image URL" name="newCake.link" [(ngModel)]="newCake.link">
       <button>Submit</button>
     </form>
   </div>
@@ -15,7 +15,7 @@
       <div class="row divhidden" *ngFor="let cake of cakes">
         <div class="col divhidden">
           <p>Baker: {{ cake.name }}</p>
-          <img src="{{cake.URL}}" alt="{{cake.name}}" style="width: 75%;">
+          <img src="{{cake.link}}" alt="{{cake.name}}" style="width: 75%;" (click)="showCake(cake)">
         </div>
         <div class="col divhidden">
           <form (submit)="addComment()">
@@ -36,5 +36,5 @@
   </div>
 </div>
 <div class="row">
-  <app-view-cake></app-view-cake>
+  <app-view-cake [current_cake]='current_cake'></app-view-cake>
 </div>

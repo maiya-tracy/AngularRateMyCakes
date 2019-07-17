@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-view-cake',
@@ -8,20 +7,11 @@ import { HttpService } from '../http.service';
 })
 export class ViewCakeComponent implements OnInit {
 
-    current_cake: any;
-    isCakeShowing: boolean;
+  @Input() current_cake: any;
+  @Input() isCakeShowing: boolean;
 
-    constructor(private _httpService: HttpService) { }
-    ngOnInit() {
-      this.isCakeShowing = false;
-    }
-    showCake() {
-      this._httpService.showCake(this.current_cake).subscribe(data => {
-        console.log("found current cake", data)
-        this.cake = data.data;
-        this.isCakeShowing = true;
-      })
-    }
-
+  constructor() { }
+  ngOnInit() {
+  }
 
 }

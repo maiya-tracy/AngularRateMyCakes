@@ -52,7 +52,7 @@ var CakeSchema = new mongoose.Schema({
     required: true,
     minlength: 2
   },
-  URL: {
+  link: {
     type: String,
     minlength: 2,
     required: true
